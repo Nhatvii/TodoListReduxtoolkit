@@ -1,0 +1,33 @@
+.parent {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    /* background-image: linear-gradient(to right bottom, #090979,#00d4ff); */
+   background: linear-gradient(129deg,rgba(0,0,139,1) 40%, rgba(63,238,247,0.846673703661152) 100%);
+    background-size: cover;
+    position: relative;
+}
+
+.title-name{
+    font-size: 3rem;
+    color: #fff;
+}
+.header-info{
+    display: block;
+    align-items: center;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+}
+.input-tag{
+    width: 50%;
+}
+.button-tag{
+    background-color:#141465;
+    color: #fff;
+    
+}
+.ant-checkbox-wrapper > span{
+    color: #fff;
+}

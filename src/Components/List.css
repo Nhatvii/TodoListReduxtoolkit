@@ -1,0 +1,37 @@
+.list-info {
+    margin: 3.3rem;
+    animation: moveInLeft 1.5s ease-out;
+}
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        opacity: 0.8;
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.ant-input{
+    width: 20vw !important;
+    height: 3vh;
+    margin-right: 2.5rem !important;
+}
+.anticon-close-circle{
+    color: #aa1a1a !important;
+    font-size: 1.5rem ;
+    vertical-align: -0.3em !important;
+    margin: 0rem 1rem;
+}
+.anticon-edit{
+    font-size: 1.5rem ;
+    vertical-align: -0.3em !important;
+    color: #141465 !important;
+}
+.ant-switch-checked{
+    background-color: #00d4ff !important;
+}
