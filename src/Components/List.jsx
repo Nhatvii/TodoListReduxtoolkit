@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import { Input, Switch } from "antd";
-import { EditOutlined, CloseCircleOutlined } from "@ant-design/icons";
+import { Input, Checkbox } from "antd";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "./List.css";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  deleteItem,
-  updateItem,
-  setIsDone,
-  getIsFilter,
-} from "./TodoListSlice";
+import { useDispatch } from "react-redux";
+import { deleteItem, updateItem, setIsDone } from "./TodoListSlice";
+import { confirmAlert } from "react-confirm-alert";
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function List(props) {
-  const { index, id, text, isDone } = props;
+  const { id, text, isDone } = props;
   const dispatch = useDispatch();
   const [title, settitle] = useState("");
 
@@ -22,22 +19,38 @@ export default function List(props) {
       dispatch(updateItem({ id: id, title: title }));
     }
   };
+  // const handleDelete = () => {
+  //   return ;
+  // }
+  const handleDeleteConfirm = () => {
+    confirmAlert({
+      title:"Confirm to delete",
+      message:"Are you sure to do this.",
+      buttons:[
+        {
+          label:"Yes",
+          onClick: () => {dispatch(deleteItem({ id: id }))}
+        },
+        {
+          label:"No",
+        }
+      ]
+    });
+  };
   return (
     <div className="list-info">
-      <Input value={text}></Input>
-      <Switch
-        onChange={(checked) => dispatch(setIsDone({ id: id, isDone: checked }))}
-        checked={isDone}
+      <Checkbox
+        onChange={(e) =>
+          dispatch(setIsDone({ id: id, isDone: e.target.checked }))
+        }
+        defaultChecked={isDone}
       />
-      <CloseCircleOutlined
-        type="danger"
-        shape="circle"
-        onClick={() => dispatch(deleteItem({ id: id }))}
-      >
-        X
-      </CloseCircleOutlined>
+      <Input value={text} />
+      {/* <DeleteOutlined onClick={() => dispatch(deleteItem({ id: id }))} /> */}
+      {/* <DeleteOutlined onClick={() => {if(window.confirm("Are you sure to delete this?")) dispatch(deleteItem({ id: id })) }} /> */}
+      <DeleteOutlined onClick={() => handleDeleteConfirm(id)} />
       <Popup trigger={<EditOutlined />} position="right center">
-        <input
+        <Input
           value={title}
           onChange={(event) => settitle(event.target.value)}
           onKeyDown={handlekeyDown}

@@ -3,31 +3,52 @@
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    /* background-image: linear-gradient(to right bottom, #090979,#00d4ff); */
-   background: linear-gradient(129deg,rgba(0,0,139,1) 40%, rgba(63,238,247,0.846673703661152) 100%);
+    /* background: linear-gradient(129deg,rgba(0,0,139,1) 40%, rgba(63,238,247,0.846673703661152) 100%); */
+    background-image: url(https://alivedesktop.com/wp-content/uploads/2017/07/Windows-XP-default-wallpaper.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
 }
-
-.title-name{
+.ant-form-item {
+    width: 61%;
+}
+.title-name {
     font-size: 3rem;
     color: #fff;
 }
-.header-info{
+.header-info {
     display: block;
     align-items: center;
     position: absolute;
-    width: 50%;
-    left: 25%;
+    width: 30%;
+    left: 37%;
 }
-.input-tag{
-    width: 50%;
-}
-.button-tag{
-    background-color:#141465;
+.button-tag {
+    background-color: #141465;
     color: #fff;
-    
 }
-.ant-checkbox-wrapper > span{
+.ant-checkbox-wrapper > span {
     color: #fff;
+}
+.flex-header {
+    display: flex;
+}
+.form-switch {
+    margin-left: 3rem;
+}
+.flex-switch {
+    display: flex;
+    width: 12rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.ant-btn {
+    background-color: #234faf !important;
+    font-weight: bold;
+    color: #fff;
+}
+.ant-input {
+    height: 4.2vh;
+    margin-right: 0.1rem !important;
 }

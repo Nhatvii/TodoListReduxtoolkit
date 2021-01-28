@@ -1,5 +1,5 @@
 .list-info {
-    margin: 3.3rem;
+    margin: 2.5rem;
     animation: moveInLeft 1.5s ease-out;
 }
 @keyframes moveInLeft {
@@ -16,22 +16,35 @@
         transform: translateX(0);
     }
 }
-.ant-input{
+.ant-input {
     width: 20vw !important;
     height: 3vh;
     margin-right: 2.5rem !important;
 }
-.anticon-close-circle{
+.anticon-close-circle {
     color: #aa1a1a !important;
-    font-size: 1.5rem ;
+    font-size: 1.5rem;
     vertical-align: -0.3em !important;
     margin: 0rem 1rem;
 }
-.anticon-edit{
-    font-size: 1.5rem ;
+.anticon-edit {
+    font-size: 1.5rem;
     vertical-align: -0.3em !important;
     color: #141465 !important;
 }
-.ant-switch-checked{
+.ant-switch-checked {
     background-color: #00d4ff !important;
+}
+.anticon-delete {
+    position: absolute;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: -1.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #aa1a1a !important;
+}
+.ant-checkbox-inner{
+    width: 2rem !important;
+    height: 1.98rem !important;
+    top: -1px !important;
 }
